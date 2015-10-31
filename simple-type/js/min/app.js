@@ -1,0 +1,1 @@
+function add(o,c){return o+c}function mult(o,c){return o*c}function colorTrace(o,c){console.log("%c"+o,"color:"+c+";font-weight:bold;")}console.log(add(2,mult(3,2))),colorTrace("Loaded Simple.js","red");
