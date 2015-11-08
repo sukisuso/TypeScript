@@ -30,7 +30,7 @@ gulp.task('typescript', function(){
 })
 
 gulp.task('watch',function(){
-	gulp.watch([tsPath], ['typescript']); // 'compressScripts'
+	gulp.watch([tsPath], ['typescript', 'compressScripts']); // 'compressScripts'
 })
 
 gulp.task('default', ['typescript', 'watch', 'compressScripts']);

@@ -31,7 +31,7 @@ var tam: number = 5;
 
 
 //funcion lambda
-var $ = (id) => { document.getElementById(id) };  
+//var $ = (id) => { document.getElementById(id) };    
 
 
 function optionalParam(x: number, y = 0): number{
@@ -39,3 +39,5 @@ function optionalParam(x: number, y = 0): number{
 }
 
 optionalParam(1);
+
+var planting = new PlantInfo();

@@ -16,9 +16,10 @@ x[1] = "";
 var mygender = 0 /* Male */;
 var tam = 5;
 //funcion lambda
-var $ = function (id) { document.getElementById(id); };
+//var $ = (id) => { document.getElementById(id) };    
 function optionalParam(x, y) {
     if (y === void 0) { y = 0; }
     return x + y;
 }
 optionalParam(1);
+var planting = new PlantInfo();
