@@ -3,7 +3,11 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	concat = require('gulp-concat')
 	plumber = require('gulp-plumber'),
+	minify = require('gulp-minify-css'),
+	rename = require('gulp-rename'),
+	concatCss = require('gulp-concat-css'),
 	tsPath = 'typescript/*.ts',
+	cssPath = 'xcss/*.css',
 	compilePath = 'js/compiled',
 	dist = 'js/min';
 
@@ -29,8 +33,16 @@ gulp.task('typescript', function(){
 					   
 })
 
-gulp.task('watch',function(){
-	gulp.watch([tsPath], ['typescript', 'compressScripts']); // 'compressScripts'
+gulp.task('compressCss',function() {
+	
+	gulp.src([cssPath])
+	.pipe(concatCss("bundle.css"))
+	.pipe(minify())
+	.pipe(gulp.dest(dist));
 })
 
-gulp.task('default', ['typescript', 'watch', 'compressScripts']);
+gulp.task('watch',function(){
+	gulp.watch([tsPath,cssPath ], ['typescript', 'compressScripts', 'compressCss']); // 'compressScripts'
+})
+
+gulp.task('default', ['typescript', 'watch', 'compressScripts', 'compressCss']);

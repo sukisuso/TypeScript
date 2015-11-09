@@ -1,11 +1,16 @@
-var Value = (function () {
-    function Value() {
+var Templates;
+(function (Templates) {
+    var Value = (function () {
+        function Value() {
+        }
+        Value.prototype.Value = function () { };
+        ;
+        return Value;
+    })();
+    Templates.Value = Value;
+    function processData(data) {
     }
-    Value.prototype.Value = function () { };
-    ;
-    return Value;
-})();
-function processData(data) {
-}
-var xNum = new Value();
-processData(xNum);
+    Templates.processData = processData;
+})(Templates || (Templates = {}));
+var xNum = new Templates.Value();
+Templates.processData(xNum);

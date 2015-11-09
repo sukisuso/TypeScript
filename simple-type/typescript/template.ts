@@ -1,16 +1,24 @@
-interface simplInte {
-	value: number;
+module Templates{
+
+
+	export interface simplInte {
+		value: number;
+	}
+
+	export class Value implements simplInte {
+		value: number;
+		Value() { };
+	}
+
+	export function processData<T>(data: T) {
+
+	}
 }
 
-class Value implements simplInte{
-	value: number;
-	Value() { };
-}
 
-function processData<T>(data: T){
 
-}
 
-var xNum: Value = new Value();
-processData<simplInte>(xNum);
+
+var xNum: Templates.Value = new Templates.Value();
+Templates.processData<Templates.simplInte>(xNum);
 
